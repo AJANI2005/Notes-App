@@ -116,8 +116,7 @@ function App() {
 
   return (
     <div className='app'>
-      <h1>Note Taking App</h1>
-      <h4>By: Ajani S</h4>
+      <h1> Note Taking App</h1>
       <Note />
       {/* Display Notes */}
       <div className='notes-grid'>
