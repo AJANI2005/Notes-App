@@ -38,10 +38,6 @@ const Note = () => {
   }, [text, title])
 
   const createNote = () => {
-    // validate note
-    if (title.trim() === '' || text.trim() === '') {
-      return alert("Please enter a title and text")
-    }
     const note = {
       id: Date.now(),
       title: title,
