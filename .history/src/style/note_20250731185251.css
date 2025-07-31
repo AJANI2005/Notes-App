@@ -1,0 +1,154 @@
+/* Make all elements respect card boundaries */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- Note Card --- */
+.note {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 300px;
+  padding: 4px; /* Gradient border thickness */
+  border-radius: 20px;
+  background: linear-gradient(145deg, #af40ff, #5b42f3 50%, #00ddeb);
+  box-shadow: rgba(151, 65, 252, 0.15) 0 8px 20px;
+  margin: 12px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; /* ensures no element spills outside */
+}
+
+.note:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(151, 65, 252, 0.25) 0 12px 28px;
+}
+
+/* Inner dark surface */
+.note-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  padding-bottom: 56px; /* space for buttons */
+  border-radius: 16px;
+  background: #0d0f2d;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Inputs --- */
+.note-title-input,
+.note-input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  outline: none;
+  padding: 8px 12px;
+  transition: 0.2s border-color, 0.2s background-color;
+}
+
+.note-title-input::placeholder,
+.note-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.note-title-input {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.note-input {
+  min-height: 80px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.note-title-input:focus,
+.note-input:focus {
+  border-color: #5b42f3;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Buttons --- */
+.addBtn,
+.deleteBtn,
+.editBtn {
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Primary Add Button */
+.addBtn {
+  background: linear-gradient(145deg, #af40ff, #5b42f3 50%, #00ddeb);
+  margin-top: auto;
+}
+
+.addBtn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Action buttons at bottom-left */
+.deleteBtn,
+.editBtn {
+  position: absolute;
+  bottom: 12px;
+}
+
+.deleteBtn {
+  left: 12px;
+  background: linear-gradient(145deg, #ff416c, #ff4b2b); /* neon pink-red */
+}
+
+.deleteBtn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.editBtn {
+  left: 62px;
+  background: linear-gradient(145deg, #00c9ff, #92fe9d); /* cyan-green neon */
+  color: #0d0f2d;
+}
+
+.editBtn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* --- Note Display --- */
+.note-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.note-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* --- Grid for Notes --- */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  justify-items: center;
+}

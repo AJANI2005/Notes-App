@@ -1,0 +1,128 @@
+/* Container Form */
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  padding-bottom: 50px; /* Extra space for deleteBtn */
+  width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+  margin: 16px;
+  position: relative;
+}
+
+.note:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Text input for note name */
+.note-title-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.note-title-input:focus {
+  border-color: #4a90e2;
+}
+
+/* Textarea for note content */
+.note-input {
+  min-height: 80px;
+  resize: vertical;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.note-input:focus {
+  border-color: #4a90e2;
+}
+
+/* Add Button */
+.addBtn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addBtn:hover {
+  background-color: #357abd;
+}
+
+.deleteBtn,
+.editBtn {
+  position: absolute;
+  bottom: 12px;
+
+  border: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: white;
+}
+
+/* Delete button styles */
+.deleteBtn {
+  left: 12px;
+  background-color: #ff6b6b;
+}
+
+.deleteBtn:hover {
+  background-color: #e63946;
+}
+
+/* Edit button styles */
+.editBtn {
+  left: 55px; /* sits next to deleteBtn with some gap */
+  background-color: #f1c40f; /* yellow/gold for edit */
+  color: #333; /* dark text for contrast */
+}
+
+.editBtn:hover {
+  background-color: #d4ac0d;
+}
+
+
+
+/* Title of the note */
+.note-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Text content of the note */
+.note-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  white-space: pre-wrap; /* show \n as line breaks */
+}
+
+/* Container for all notes */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 16px; /* Space between notes */
+  padding: 20px;
+  justify-items: center; /* Center notes in their column */
+}

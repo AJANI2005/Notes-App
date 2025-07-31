@@ -1,0 +1,152 @@
+/* Outer Note Card - gradient like .card */
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px; /* leave room for inner card content */
+  width: 280px;
+  height: 300px; /* optional fixed height for card-like look */
+  border-radius: 20px;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  position: relative;
+  margin: 16px;
+  transition: transform 0.2s ease;
+}
+
+.note:hover {
+  transform: translateY(-3px);
+}
+
+/* Inner dark content like .card__content */
+.note-content {
+  background: rgb(5, 6, 45); /* dark inner content */
+  border-radius: 17px;
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 50px; /* make space for delete/edit buttons */
+  color: white;
+  position: relative;
+}
+
+/* Title input */
+.note-title-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #5B42F3;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  transition: 0.2s;
+}
+
+.note-title-input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.note-title-input:focus {
+  border-color: #00DDEB;
+}
+
+/* Textarea input */
+.note-input {
+  min-height: 80px;
+  resize: vertical;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #5B42F3;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  transition: 0.2s;
+}
+
+.note-input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.note-input:focus {
+  border-color: #00DDEB;
+}
+
+/* Add Button - matches gradient theme */
+.addBtn {
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.addBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Delete and Edit Buttons */
+.deleteBtn,
+.editBtn {
+  position: absolute;
+  bottom: 12px;
+  border: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.deleteBtn {
+  left: 12px;
+  background-color: #ff6b6b;
+}
+
+.deleteBtn:hover {
+  background-color: #e63946;
+  transform: scale(1.05);
+}
+
+.editBtn {
+  left: 65px;
+  background-color: #4ff10f;
+  color: #111;
+}
+
+.editBtn:hover {
+  background-color: #49d611;
+  transform: scale(1.05);
+}
+
+/* Title of the note */
+.note-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+/* Text content of the note */
+.note-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  white-space: pre-wrap; /* respect \n */
+}
+
+/* Grid for all notes */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  justify-items: center;
+}
