@@ -129,13 +129,13 @@ function App() {
               <button className='deleteBtn'
                 onClick={()=>{
                   setCurrentNote(note)
-                  deleteNote()
                   setEditing(false)
+                  deleteNote()
                 }}
               >🗑️</button>
               <button className='editBtn' onClick={() => {
-                setCurrentNote(note);
                 setEditing(true);
+                setCurrentNote(note);
               }}
               >📝</button>
             </div>

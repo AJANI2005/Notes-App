@@ -134,8 +134,8 @@ function App() {
                 }}
               >🗑️</button>
               <button className='editBtn' onClick={() => {
-                setCurrentNote(note);
                 setEditing(true);
+                setCurrentNote(note);
               }}
               >📝</button>
             </div>
